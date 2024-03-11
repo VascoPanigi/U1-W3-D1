@@ -50,8 +50,6 @@ console.log(total);
   Scrivi una funzione per sommare i numeri contenuti in un array
 */
 
-totalArray = 0;
-
 const sumOfArray = anArray.reduce((accumulator, currentValue) => {
   return accumulator + currentValue;
 }, 0);
@@ -241,6 +239,15 @@ console.log(filmTitle(movies));
 /* ESERCIZIO 13 (reduce)
   Scrivi una funzione per calcolare la somma di tutti gli anni in cui sono stati prodotti i film contenuti nell'array fornito.
 */
+
+const sumOfYears = function (filmArr) {
+  return filmArr.reduce(
+    (accumulator, currentValue) => accumulator + Number(currentValue.Year),
+    0
+  );
+};
+
+console.log(sumOfYears(movies));
 
 /* ESERCIZIO 14 (find)
   Scrivi una funzione per ottenere dall'array fornito uno specifico film (la funzione riceve un imdbID come parametro).
