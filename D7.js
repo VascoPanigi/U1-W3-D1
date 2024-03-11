@@ -16,6 +16,17 @@ console.log(strConcat("ciao", "epicoders"));
   Scrivi una funzione che torni un array di 10 elementi; ognuno di essi deve essere un valore random compreso tra 0 e 100 (incluso).
 */
 
+const randomArray = function () {
+  const anArray = [];
+  for (let i = 0; i < 11; i++) {
+    const randomNum = Math.floor(Math.random() * 101);
+    anArray.push(randomNum);
+  }
+  return anArray;
+};
+
+console.log(randomArray());
+
 /* ESERCIZIO 3 (filter)
   Scrivi una funzione per ricavare solamente i valori PARI da un array composto da soli valori numerici
 */
