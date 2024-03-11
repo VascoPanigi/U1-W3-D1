@@ -16,9 +16,10 @@ console.log(strConcat("ciao", "epicoders"));
   Scrivi una funzione che torni un array di 10 elementi; ognuno di essi deve essere un valore random compreso tra 0 e 100 (incluso).
 */
 
+const anArray = [];
+
 const randomArray = function () {
-  const anArray = [];
-  for (let i = 0; i < 11; i++) {
+  for (let i = 0; i < 10; i++) {
     const randomNum = Math.floor(Math.random() * 101);
     anArray.push(randomNum);
   }
@@ -31,26 +32,67 @@ console.log(randomArray());
   Scrivi una funzione per ricavare solamente i valori PARI da un array composto da soli valori numerici
 */
 
+const evenNums = anArray.filter((num) => Math.floor(num / 2) * 2 === num);
+
+console.log(evenNums);
+
 /* ESERCIZIO 4 (forEach)
   Scrivi una funzione per sommare i numeri contenuti in un array
 */
+
+total = 0;
+
+const sumOfNums = anArray.forEach((num) => (total += num));
+
+console.log(total);
 
 /* ESERCIZIO 5 (reduce)
   Scrivi una funzione per sommare i numeri contenuti in un array
 */
 
+totalArray = 0;
+
+const sumOfArray = anArray.reduce((accumulator, currentValue) => {
+  return accumulator + currentValue;
+}, 0);
+
+console.log(sumOfArray);
+
 /* ESERCIZIO 6 (map)
   Scrivi una funzione che, dato un array di soli numeri e un numero n come parametri, ritorni un secondo array con tutti i valori del precedente incrementati di n
 */
+
+const incrementNums = (array, n) => {
+  return array.map((num) => num + n);
+};
+
+console.log(incrementNums(anArray, 10));
 
 /* ESERCIZIO 7 (map)
   Scrivi una funzione che, dato un array di stringhe, ritorni un nuovo array contenente le lunghezze delle rispettive stringhe dell'array di partenza
   es.: ["EPICODE", "is", "great"] => [7, 2, 5]
 */
 
+const strLength = (strArray) => {
+  return strArray.map((word) => word.length);
+};
+
+const exampleArr = ["EPICODE", "is", "great"];
+console.log(strLength(exampleArr));
+
 /* ESERCIZIO 8 (forEach o for)
   Scrivi una funzione per creare un array contenente tutti i valori DISPARI da 1 a 99.
 */
+
+const oddNums = function () {
+  const oddNumsArr = [];
+  for (let i = 1; i <= 99; i += 2) {
+    oddNumsArr.push(i);
+  }
+  return oddNumsArr;
+};
+
+console.log(oddNums());
 
 /* Questo array di film verrà usato negli esercizi a seguire. Non modificarlo e scorri oltre per riprendere gli esercizi :) */
 const movies = [
